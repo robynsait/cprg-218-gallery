@@ -4,28 +4,60 @@
     font-family: Arial, Helvetica, sans-serif;
     background-color: #cccccc;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .header-container {
     background-color: #120323;
+    text-align: center;
+    padding-top: 1rem;
 }
 
 .header-container h1 {
     color: #97bf04;
     background-color: #120323;
+    margin: 2% auto 2% auto;
 }
 
 .header-container img {
     background-color: #120323;
+    display: block;
+    margin: auto;
+}
+
+nav li, a {
+    background-color: #d9043d;
+    color: #fff;
+    text-decoration: none; 
+}
+
+main h2 {
+    text-align: center;
+    margin: 2% auto 2% auto;
+}
+
+#gallery-container figure {
+    background-color: #fff;
+    padding: 1rem;
+}
+
+#gallery-container figcaption, h3, p {
+    background-color: #fff;
+}
+
+#gallery-container h3 {
+    margin: 2% auto 2% auto;
 }
 
 main img {
     border-bottom: 10px solid #97bf04;
+    max-width: 100%;
 }
 
 footer {
     background-color: #d9043d;
-    padding: 3%;
+    padding: 1rem;
     text-align: center;
 }
 
@@ -36,3 +68,92 @@ footer small {
 
 /* Largest Size Styles */
 
+@media screen and (min-width: 1001px) {
+    nav ul li {
+        display: inline-block;
+        padding: 0 1rem 0 1rem;
+    }
+
+    nav ul {
+        background-color: #d9043d;
+        padding: 1rem 0 1rem 0;
+    }    
+
+    #gallery-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        padding: 0 2rem 2rem 2rem;
+    }
+
+    #gallery-container img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    #gallery-container figure:last-child {
+        grid-column: span 2;
+    }
+}
+
+/* Medium Size Styles */
+
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+    nav ul li {
+        display: inline-block;
+        padding: 0 1rem 0 1rem;
+    }
+
+    nav ul {
+        background-color: #d9043d;
+        padding: 1rem 0 1rem 0;
+    } 
+
+    #gallery-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        padding: 0 2rem 2rem 2rem;
+    }
+
+    #gallery-container img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    #gallery-container figure:last-child {
+        grid-column: span 2;
+    }
+}
+
+/* Small Size Styles */
+
+@media screen and (max-width:767px) {
+
+    nav ul li {
+        border: 3px solid #97bf04;
+        margin: 1%;
+        padding: 2% 0 2% 0;
+        list-style-type: none;
+    }
+
+    nav {
+        width: 95%;
+        margin: 2rem auto 0 auto;
+    }
+
+    nav ul {
+        background-color: #120323;
+        padding-bottom: 2rem;
+    }
+
+    #gallery-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2rem;
+        padding: 0 2rem 2rem 2rem;
+    }
+    #gallery-container img {
+        text-align:center;
+    }
+}
